@@ -30,17 +30,15 @@ public class DN03_63250068 {
             return (long) (visina / najvecjaPloscica) * (sirina / najvecjaPloscica);
         }
 
-         long stPloscic = 0;
-
         if (visina % najvecjaPloscica == 0) {
-            stPloscic += (long) (visina / najvecjaPloscica) * (sirina / najvecjaPloscica);
-            stPloscic += polaganje(visina, sirina % najvecjaPloscica, k - 1);
-        } else {
-            stPloscic += polaganje(visina - (visina % najvecjaPloscica), sirina, k - 1);
-            stPloscic += polaganje(visina % najvecjaPloscica, sirina, k - 1);
+            long stPloscic = (long) (visina / najvecjaPloscica) * (sirina / najvecjaPloscica);
+            return stPloscic + polaganje(visina, sirina % najvecjaPloscica, k - 1);
         }
+            long stPloscic = polaganje(visina - (visina % najvecjaPloscica), sirina, k);
+            stPloscic += polaganje(visina % najvecjaPloscica, sirina, k - 1);
 
-         return stPloscic;
+            return stPloscic;
+
     }
 
 }
