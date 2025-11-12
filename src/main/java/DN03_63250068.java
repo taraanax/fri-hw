@@ -33,7 +33,7 @@ public class DN03_63250068 {
         if (visina % najvecjaPloscica == 0) {
             long stPloscic = (long) (visina / najvecjaPloscica) * (sirina / najvecjaPloscica);
             return stPloscic + polaganje(visina, sirina % najvecjaPloscica, k - 1);
-        }
+        }// kle ne sme bit else idk why its 2 am
             long stPloscic = polaganje(visina - (visina % najvecjaPloscica), sirina, k);
             stPloscic += polaganje(visina % najvecjaPloscica, sirina, k - 1);
 
