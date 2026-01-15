@@ -15,7 +15,7 @@ public class Tocka {
         System.out.print(t);
     }
 
-    public double vrniX(){Ł
+    public double vrniX(){
         return this.x;
     }
 
