@@ -5,7 +5,7 @@ public class Glavni {
 
     public static void urediPoLetuInNaslovu(List<Clanek> clanki) {
         clanki.sort((c1, c2) -> {
-            int razlikaLet = Integer.compare(c2.getLeto(), c1.getLeto());
+            int razlikaLet = c2.getLeto() - c1.getLeto();
             if (razlikaLet != 0) return razlikaLet;
             return c1.getNaslov().compareTo(c2.getNaslov());
         });
@@ -13,8 +13,8 @@ public class Glavni {
 
     public static Set<Avtor> vsiAvtorji(Collection<Clanek> clanki) {
         Set<Avtor> avtorji = new HashSet<>();
-        for (Clanek c : clanki) {
-           avtorji.addAll(c.getAvtorji());
+        for (Clanek clanek : clanki) {
+           avtorji.addAll(clanek.getAvtorji());
         }
         return avtorji;
     }
@@ -22,10 +22,10 @@ public class Glavni {
     public static Map<Avtor, List<Clanek>> clankiPoAvtorjih(Collection<Clanek> clanki) {
         Map<Avtor, List<Clanek>> map = new HashMap<>();
 
-        for (Clanek c : clanki) {
-            for (Avtor a : c.getAvtorji()) {
-                map.putIfAbsent(a, new ArrayList<>());
-                map.get(a).add(c);
+        for (Clanek clanek : clanki) {
+            for (Avtor avtor : clanek.getAvtorji()) {
+                map.putIfAbsent(avtor, new ArrayList<>());
+                map.get(avtor).add(clanek);
             }
         }
 
