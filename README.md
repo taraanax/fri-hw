@@ -24,9 +24,9 @@ javac Main.java
 java Main
 ```
 
-```
+<pre lang="text">
    (•̀ᴗ•́)و ̑̑
    compiling...
-```
+</pre>
 
 povratne info zaželjene
