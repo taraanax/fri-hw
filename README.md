@@ -1,4 +1,4 @@
-# ☕ P1 homework
+# ☕︎ P1 homework
 
 > object-oriented suffering
 <pre lang="text"> 
